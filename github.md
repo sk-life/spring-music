@@ -2,6 +2,8 @@
 
 I'll use the Spring Music app for example. Assume sk-life/spring-music-gitserver is on your internal git server, and sk-life/spring-test on GitHub.com.
 
+
+### Clone & Check Remote
 First navigate to the respective repo for syncing. If it's not already cloned, clone it to your local environment.
 You can then view your current git remote servers configuration of your repository.
 
@@ -12,7 +14,7 @@ $ git remotes -v
 origin	https://github.com/sk-life/spring-music-gitserver (fetch)
 origin	https://github.com/sk-life/spring-music-gitserver (push)
 ```
-
+### Configure origin  
 Configure your origin remote (by using the "git remote set-url') to add the second remote repository (sk-life/spring-test)
 
 ```bash
@@ -22,7 +24,7 @@ origin	https://github.com/sk-life/spring-music-gitserver (fetch)
 origin	https://github.com/sk-life/spring-music-gitserver (push)
 origin	https://github.com/sk-life/spring-test.git (push)
 ```
-
+### Sync both servers
 Now, once you do a `git push origin`, all your remotes should be synced up!
 ```bash
 $ git push origin master
@@ -42,10 +44,12 @@ To https://github.com/sk-life/spring-test.git
 _NOTE: Ensure you have the credentials configured for both repositories, and you have read/write permissions._
 
 ----
-Will you be doing active development in both GitHub and your git server?
+
+**Will you be doing active development in both GitHub and your git server?**
 
 Your next push will get rejected if the GitHub repository has commits that do not match your GitHub repo.
 
+### Add new remote
 If you want to pull from both the 2 different git repositories, then you will have to add the secondary one as another remote.
 ```bash
 $ git remote add origin-github https://github.com/sk-life/spring-test.git
@@ -57,6 +61,7 @@ origin-github	https://github.com/sk-life/spring-test.git (fetch)
 origin-github	https://github.com/sk-life/spring-test.git (push)
 ```
 
+### Pull changes & sync
 You can then pull from specific branch of the GitHub repo to merge into the your local environment. Once you merge and commits match, you can push to sync all again.
 ```bash
 # Pulling master branch from remote server "origin-github"
