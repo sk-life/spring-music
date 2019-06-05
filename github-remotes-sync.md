@@ -45,7 +45,7 @@ _NOTE: Ensure you have the credentials configured for both repositories, and you
 
 ----
 
-**Will you be doing active development in both GitHub and your git server repository?**
+## Will you be doing active development in both your GitHub and git server repository?
 
 In this case, if you have changes on GitHub, you cannot pull them in to your git server repository since it will only pull from the url annotated with (fetch). So, if the GitHub repository has commits that are not in your git server repo, your next push will get rejected since the commit history will not match.
 
