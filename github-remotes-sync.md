@@ -1,16 +1,16 @@
 
 
-I'll use the Spring Music app for example. Assume sk-life/spring-music is on your internal git server, and sk-life/spring-test on GitHub.com.
+I'll use the Spring Music app for example. Assume _../sk-life/spring-music_ is on your internal git server, and _../sk-life/spring-test_ on GitHub.com.
 
 
 ### Clone & Check Remote
 First navigate to the respective repo for syncing. If it's not already cloned, clone it to your local environment.
-You can then view your current git remote servers configuration of your repository.
+You can then view your current `git remote` configuration of your repository.
 
 ```bash
 $ git clone https://github.com/sk-life/spring-music
 $ cd spring-music
-$ git remotes -v
+$ git remote -v
 origin	https://github.com/sk-life/spring-music (fetch)
 origin	https://github.com/sk-life/spring-music (push)
 ```
@@ -45,7 +45,7 @@ _NOTE: Ensure you have the credentials configured for both repositories, and you
 
 ----
 
-**Will you be doing active development in both GitHub and your git server?**
+**Will you be doing active development in both GitHub and your git server repository?**
 
 In this case, if you have changes on GitHub, you cannot pull them in to your git server repository since it will only pull from the url annotated with (fetch). So, if the GitHub repository has commits that are not in your git server repo, your next push will get rejected since the commit history will not match.
 
@@ -63,7 +63,7 @@ origin-github	https://github.com/sk-life/spring-test.git (fetch)
 origin-github	https://github.com/sk-life/spring-test.git (push)
 ```
 
-### Pull changes & sync
+### Pull Changes & Sync
 You can then pull from specific branch of the GitHub repo to merge into the your local environment. Once you merge and commits match, you can push to sync all again.
 ```bash
 # Pulling master branch from remote server "origin-github"
