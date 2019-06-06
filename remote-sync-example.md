@@ -1,4 +1,4 @@
-
+## Git Remote Sync Example
 
 I'll use the Spring Music app for example. Assume _../sk-life/spring-music_ is on your internal git server, and _../sk-life/spring-test_ on GitHub.com.
 
